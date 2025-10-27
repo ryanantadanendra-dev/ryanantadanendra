@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import { Transition } from "motion/react";
 import { ReactNode, AnchorHTMLAttributes } from "react";
 import { motion } from "motion/react";
 
@@ -7,7 +8,7 @@ interface HoveredLinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
   children: ReactNode;
 }
 
-const transition = {
+const transition: Transition = {
   type: "spring",
   mass: 0.5,
   damping: 11.5,
