@@ -16,10 +16,6 @@ export const metadata: Metadata = {
   description: "Ryananta Danendra Portfolio Website",
 };
 
-const fontRegular = localFont({
-  src: "./fonts/Raleway/static/Raleway-regular.ttf",
-});
-
 export default function Home() {
   return (
     <div>
