@@ -27,14 +27,14 @@ const Skills = () => {
     <div className="skills-container mx-auto w-[100vw] h-[160vh] md:h-[100vh] lg:h-[250vh] relative whitespace-nowrap overflow-hidden font-bold">
       <motion.h1
         initial={{ x: isMobile ? 20 : -200, opacity: 0 }}
-        whileInView={{ x: isMobile ? 10 : 0, opacity: 1 }}
+        whileInView={{ x: isMobile ? 0 : 0, opacity: 1 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
         viewport={{
           once: true,
           amount: 0.2,
           margin: isMobile ? "-200px 0px" : "-200px 0px",
         }}
-        className="lg:text-[20rem] md:text=[14rem] text-[7rem] whitespace-nowrap ms-7"
+        className="lg:text-[20rem] md:text=[14rem] text-[7rem] whitespace-nowrap lg:ms-7 ms-2"
       >
         Tech
       </motion.h1>
@@ -177,7 +177,7 @@ const Skills = () => {
             className="w-40 absolute rotate-12 -left-8 lg:left-0"
           />
           <motion.img
-            initial={{ y: isMobile ? 10 : 150 }}
+            initial={{ y: isMobile ? 10 : 90 }}
             whileInView={{ y: 0 }}
             transition={{ delay: 1, duration: 0.5, ease: "easeOut" }}
             viewport={{ once: true }}
