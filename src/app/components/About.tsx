@@ -1,11 +1,6 @@
 "use client";
 import { motion } from "motion/react";
-import Image from "next/image";
-import Me from "../../../public/images/me.png";
-import { TextGenerateEffect } from "../../components/ui/text-generate-effect";
 import { StickyScroll } from "../../components/ui/sticky-scroll-reveal";
-
-const words = `Hey There! im A. A. Ngurah Bagus Ryananta Danendra, you can call me Danend. I was born on the 13th of April 2006 and im from Denpasar, Bali.Im a full - stack web developer and im currently a studen at ITB STIKOM Bali`;
 
 const content = [
   {

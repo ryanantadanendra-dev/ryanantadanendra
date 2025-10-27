@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { footer } from "motion/react-client";
 import { motion } from "motion/react";
 
 const Footer = () => {

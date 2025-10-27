@@ -1,9 +1,8 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
-import { easeInOut, useMotionValueEvent, useScroll } from "motion/react";
+import { useMotionValueEvent, useScroll } from "motion/react";
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
-import { h1 } from "motion/react-client";
 
 export const StickyScroll = ({
   content,
@@ -12,13 +11,13 @@ export const StickyScroll = ({
   content: {
     title: string;
     description: string;
-    content?: React.ReactNode | any;
+    content?: React.ReactNode;
   }[];
   contentClassName?: string;
 }) => {
   const [isMobile, setIsMobile] = useState(false);
   const [activeCard, setActiveCard] = React.useState(0);
-  const ref = useRef<any>(null);
+  const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     // uncomment line 22 and comment line 23 if you DONT want the overflow container and want to have it change on the entire page scroll
     // target: ref
@@ -60,7 +59,7 @@ export const StickyScroll = ({
 
   useEffect(() => {
     setBackgroundGradient(linearGradients[activeCard % linearGradients.length]);
-  }, [activeCard]);
+  }, [activeCard, linearGradients]);
 
   useEffect(() => {
     function checkWidth() {

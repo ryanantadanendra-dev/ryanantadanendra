@@ -1,16 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { img } from "motion/react-client";
-import Image from "next/image";
 import datas from "../../app/datas/skills.json";
-import {
-  motion,
-  useScroll,
-  useMotionValueEvent,
-  useTransform,
-  useSpring,
-} from "motion/react";
+import { motion, useScroll, useTransform, useSpring } from "motion/react";
 
 const Skills = () => {
   const { scrollY } = useScroll();
@@ -30,13 +22,6 @@ const Skills = () => {
 
   const yUp = useTransform(scrollY, [0, 5000], [0, -1000]);
   // const xRight = useTransform(scrollY, [0, 500], [0, -900]);
-  const smoothY = useSpring(yUp, { stiffness: 80, damping: 15 });
-
-  const display = datas.skills.map((skill: any, index: number) => {
-    return (
-      <img src={skill} alt="image" className="skill-imag w-20 object-contain" />
-    );
-  });
 
   return (
     <div className="skills-container mx-auto w-[100vw] h-[160vh] md:h-[100vh] lg:h-[250vh] relative whitespace-nowrap overflow-hidden font-bold">

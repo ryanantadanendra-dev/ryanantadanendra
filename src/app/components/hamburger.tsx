@@ -2,7 +2,6 @@
 
 export default function Hamburger() {
   function openMenu() {
-    const hamburger = document.getElementById("hamburger-btn");
     const Menu = document.getElementById("hamburger-menu");
     const Path = document.getElementById("hamburger-path");
 

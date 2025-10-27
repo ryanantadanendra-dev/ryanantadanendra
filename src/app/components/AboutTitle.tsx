@@ -1,11 +1,6 @@
 "use client";
 
-import {
-  motion,
-  useScroll,
-  useMotionValueEvent,
-  useTransform,
-} from "motion/react";
+import { motion, useScroll, useTransform } from "motion/react";
 
 export default function AboutTitle() {
   const { scrollY } = useScroll();
