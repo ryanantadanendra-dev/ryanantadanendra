@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 export const Card = React.memo(
   ({
@@ -19,11 +20,12 @@ export const Card = React.memo(
       onMouseEnter={() => setHovered(index)}
       onMouseLeave={() => setHovered(null)}
       className={cn(
-        "rounded-lg object-cover relative bg-gray-100 dark:bg-neutral-900 overflow-hidden md:h-96 md:w-full w-72 h-72 transition-all duration-300 ease-out mt-12 mx-auto",
+        "rounded-lg object-cover relative bg-gray-100 dark:bg-neutral-900 overflow-hidden md:h-96 md:w-full w-80 h-96 transition-all duration-300 ease-out mt-12 mx-auto",
         hovered !== null && hovered !== index && "blur-sm scale-[0.98]"
       )}
     >
-      <img
+      <Image
+        fill
         src={card.src}
         alt={card.title}
         className="absolute inset-0 object-cover w-full h-full"
@@ -42,7 +44,13 @@ export const Card = React.memo(
           <p>Built With: </p>
           {card?.stacks?.map((stack: string, index: number) => (
             <div className="project-stack" key={index}>
-              <img src={stack} alt={card.title} className="w-12 object-cover" />
+              <Image
+                width={100}
+                height={100}
+                src={stack}
+                alt={card.title}
+                className="w-12 object-cover"
+              />
             </div>
           ))}
         </div>

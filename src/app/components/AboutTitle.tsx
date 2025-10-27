@@ -5,7 +5,7 @@ import { motion, useScroll, useTransform } from "motion/react";
 export default function AboutTitle() {
   const { scrollY } = useScroll();
 
-  const xLeft = useTransform(scrollY, [0, 4000], [-2000, 200]);
+  const xLeft = useTransform(scrollY, [0, 4000], [-2000, -200]);
   const xRight = useTransform(scrollY, [0, 4000], [500, -900]);
 
   return (
