@@ -3,15 +3,6 @@
 
 @custom-variant dark (&:is(.dark *));
 
-@font-face {
-  font-family: Raleway-bold;
-  src: url("./fonts/Raleway//static/Raleway-Bold.ttf");
-}
-@font-face {
-  font-family: Raleway;
-  src: url("./fonts/Raleway//static/Raleway-Regular.ttf");
-}
-
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -148,10 +139,42 @@ body {
   }
 }
 
-* {
-  font-family: Raleway-bold;
+html {
+  overflow-x: hidden;
 }
 
-.hero-heading2 {
+* {
+  scroll-behavior: smooth;
+}
+
+/* .hero-heading2,
+.project-desc,
+.about-text,
+.footer-link {
+  font-family: Raleway;
+} */
+
+.skills-track {
+  display: flex;
+  width: max-content;
+  animation: scroll 40s linear infinite;
+}
+
+.skills-content {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.title {
   font-family: Raleway;
 }

@@ -35,11 +35,22 @@ export default function Hamburger() {
         </svg>
       </button>
       <div
-        className="absolute -z-10 w-full h-72 -top-96 transition-all duration-300 ease-out"
+        className=" -z-10 w-full h-72 -top-96 transition-all duration-300 ease-out fixed pt-20 ps-3"
         id="hamburger-menu"
         style={{ backgroundColor: "#FFFFFF" }}
       >
-        <h1>Hello World</h1>
+        <a href="#home">
+          <p className="text-black text-2xl">Home</p>
+        </a>
+        <a href="#projects">
+          <p className="text-black text-2xl mt-1">Projects</p>
+        </a>
+        <a href="#about">
+          <p className="text-black text-2xl mt-1">About</p>
+        </a>
+        <a href="#skills">
+          <p className="text-black text-2xl mt-1">Skills</p>
+        </a>
       </div>
     </nav>
   );

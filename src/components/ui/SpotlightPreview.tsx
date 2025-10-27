@@ -4,7 +4,7 @@ import { Spotlight } from "../ui/spotlight";
 
 export function SpotlightPreview({ children }: { children: React.ReactNode }) {
   return (
-    <div className="relative flex h-[40rem] w-full overflow-hidden rounded-md bg-black/[0.96] antialiased md:items-center md:justify-center -z-0">
+    <div className="relative flex h-[100vh] w-full overflow-hidden rounded-md bg-black/[0.96] antialiased md:items-center md:justify-center -z-0">
       <div
         className={cn(
           "pointer-events-none absolute inset-0 [background-size:40px_40px] select-none",
@@ -13,10 +13,10 @@ export function SpotlightPreview({ children }: { children: React.ReactNode }) {
       />
 
       <Spotlight
-        className="-top-40 left-0 md:-top-20 md:left-60"
+        className="lg:-top-40 top-20 left-0 md:-top-20 "
         fill="white"
       />
-      <div className="relative z-10 mx-auto w-full max-w-7xl p-4 pt-20 md:pt-0">
+      <div className="relative z-10 mx-auto w-full max-w-7xl my-auto lg:my-0 p-4 pt-20 md:pt-0">
         {children}
       </div>
     </div>

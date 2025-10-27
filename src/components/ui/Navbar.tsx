@@ -1,7 +1,9 @@
 "use client";
+
 import React, { useState } from "react";
 import { HoveredLink, Menu, MenuItem, ProductItem } from "../ui/navbar-menu";
 import { cn } from "@/lib/utils";
+import { motion, useScroll, useMotionValueEvent } from "motion/react";
 
 export function NavbarDemo() {
   return (
@@ -16,21 +18,42 @@ export function NavbarDemo() {
 
 function Navbar({ className }: { className?: string }) {
   const [active, setActive] = useState<string | null>(null);
+  const [hidden, setHidden] = useState(false);
+  const { scrollY } = useScroll();
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    const prev = scrollY?.getPrevious();
+    if (latest > prev && latest > 150) {
+      setHidden(true);
+    } else {
+      setHidden(false);
+    }
+  });
+
   return (
-    <div
+    <motion.div
+      variants={{
+        visible: { y: 0 },
+        hidden: { y: "-120%" },
+      }}
+      animate={hidden ? "hidden" : "visible"}
+      transition={{ duration: 0.2, ease: "easeInOut" }}
       className={cn("fixed top-10 inset-x-0 max-w-2xl mx-auto z-50", className)}
     >
       <Menu setActive={setActive}>
-        <MenuItem setActive={setActive} active={active} item="Home">
-          {/* <div className="flex flex-col space-y-4 text-sm">
+        <a href="#home">
+          <MenuItem setActive={setActive} active={active} item="Home">
+            {/* <div className="flex flex-col space-y-4 text-sm">
             <HoveredLink href="/web-dev">Web Development</HoveredLink>
             <HoveredLink href="/interface-design">Interface Design</HoveredLink>
             <HoveredLink href="/seo">Search Engine Optimization</HoveredLink>
             <HoveredLink href="/branding">Branding</HoveredLink>
           </div> */}
-        </MenuItem>
-        <MenuItem setActive={setActive} active={active} item="Projects">
-          {/* <div className="  text-sm grid grid-cols-2 gap-10 p-4">
+          </MenuItem>
+        </a>
+        <a href="#projects">
+          <MenuItem setActive={setActive} active={active} item="Projects">
+            {/* <div className="  text-sm grid grid-cols-2 gap-10 p-4">
             <ProductItem
               title="Algochurn"
               href="https://algochurn.com"
@@ -56,24 +79,29 @@ function Navbar({ className }: { className?: string }) {
               description="Respond to government RFPs, RFIs and RFQs 10x faster using AI"
             />
           </div> */}
-        </MenuItem>
-        <MenuItem setActive={setActive} active={active} item="Skills">
-          {/* <div className="flex flex-col space-y-4 text-sm">
+          </MenuItem>
+        </a>
+        <a href="#about">
+          <MenuItem setActive={setActive} active={active} item="About">
+            {/* <div className="flex flex-col space-y-4 text-sm">
             <HoveredLink href="/hobby">Hobby</HoveredLink>
             <HoveredLink href="/individual">Individual</HoveredLink>
             <HoveredLink href="/team">Team</HoveredLink>
             <HoveredLink href="/enterprise">Enterprise</HoveredLink>
           </div> */}
-        </MenuItem>
-        <MenuItem setActive={setActive} active={active} item="About">
-          {/* <div className="flex flex-col space-y-4 text-sm">
+          </MenuItem>
+        </a>
+        <a href="#skills">
+          <MenuItem setActive={setActive} active={active} item="Skills">
+            {/* <div className="flex flex-col space-y-4 text-sm">
             <HoveredLink href="/hobby">Hobby</HoveredLink>
             <HoveredLink href="/individual">Individual</HoveredLink>
             <HoveredLink href="/team">Team</HoveredLink>
             <HoveredLink href="/enterprise">Enterprise</HoveredLink>
           </div> */}
-        </MenuItem>
+          </MenuItem>
+        </a>
       </Menu>
-    </div>
+    </motion.div>
   );
 }
