@@ -4,7 +4,7 @@ export const raleway = localFont({
   src: [
     {
       path: "./fonts/Raleway/static/Raleway-Bold.ttf",
-      weight: "500",
+      weight: "700",
       style: "normal",
     },
     {
