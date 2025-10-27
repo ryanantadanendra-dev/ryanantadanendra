@@ -22,7 +22,7 @@ function Navbar({ className }: { className?: string }) {
   const { scrollY } = useScroll();
 
   useMotionValueEvent(scrollY, "change", (latest) => {
-    const prev = scrollY?.getPrevious();
+    const prev = scrollY ? scrollY?.getPrevious() : 0;
     if (latest > prev && latest > 150) {
       setHidden(true);
     } else {
