@@ -241,7 +241,6 @@ const Skills = () => {
               src="https://res.cloudinary.com/dpghhbxwz/image/upload/v1760708798/MongoDB_Logo___01_-_PNG_Logo_Vector_Brand_Downloads__SVG__EPS_-removebg-preview_ljjovo.png"
               alt="Mongodb"
               title="mongodb"
-              loading="eager"
               width={isMobile ? 140 : isTablet ? 190 : 200}
               height={isMobile ? 140 : isTablet ? 190 : 200}
             />
