@@ -104,7 +104,7 @@ const Skills = () => {
           initial={{ y: 500, scale: 0, rotate: 180 }}
           whileInView={{ y: 0, scale: 1, rotate: 0 }}
           transition={{ duration: 0.8, ease: "easeInOut" }}
-          viewport={{ once: true, amount: 0.2, margin: "500px 0px 500px 0px" }}
+          viewport={{ once: true, amount: 0.2 }}
         >
           <h2 className="text-black mt-4 ms-4">Back-end</h2>
           <motion.div
@@ -161,7 +161,6 @@ const Skills = () => {
           viewport={{
             once: true,
             amount: 0.2,
-            margin: "500px 0px 500px 0px",
           }}
         >
           <h2 className="text-black mt-4 ms-4">Tools</h2>
