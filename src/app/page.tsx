@@ -31,7 +31,7 @@ export default function Home() {
           <AboutTitle />
           <About />
         </div>
-        <div id="skills" className="w-screen h-full mt-[30rem] lg:mt-72">
+        <div id="skills" className="w-screen h-full mt-[10rem] lg:mt-72">
           <Skills />
         </div>
       </main>
