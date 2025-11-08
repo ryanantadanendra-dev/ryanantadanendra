@@ -25,7 +25,7 @@ export function FocusCardsDemo() {
     },
     {
       title: "Tour",
-      src: "/images/tour.jpg",
+      src: "/images/tour.png",
       stacks: [
         "https://res.cloudinary.com/dpghhbxwz/image/upload/v1760011729/tailwind_ikgyu6.png",
         "https://res.cloudinary.com/dpghhbxwz/image/upload/v1760011729/laravel_rquhm7.png",
@@ -48,7 +48,7 @@ export function FocusCardsDemo() {
     },
     {
       title: "D ' Images",
-      src: "/images/dimages_image.jpg",
+      src: "/images/dimages.png",
       stacks: [
         "https://res.cloudinary.com/dpghhbxwz/image/upload/v1760012748/react_mh0evw.png",
       ],
