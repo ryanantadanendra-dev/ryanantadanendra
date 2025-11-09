@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { motion, useScroll, useTransform, useSpring } from "motion/react";
+import { motion, useScroll, useTransform } from "motion/react";
 
 const Skills = () => {
   const { scrollY } = useScroll();
@@ -22,7 +22,6 @@ const Skills = () => {
     return () => window.removeEventListener("resize", checkWidth);
   }, []);
 
-  const yUp = useTransform(scrollY, [0, 5000], [0, -1000]);
   // const xRight = useTransform(scrollY, [0, 500], [0, -900]);
 
   return (

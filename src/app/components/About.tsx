@@ -1,9 +1,7 @@
 "use client";
 import { motion } from "motion/react";
-import { StickyScroll } from "../../components/ui/sticky-scroll-reveal";
 import Image from "next/image";
 import me from "../../../public/images/ME.jpg";
-import { useRef } from "react";
 
 export function About() {
   return (
