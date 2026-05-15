@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { motion, useScroll } from "motion/react";
+import { motion } from "motion/react";
 
 const Skills = () => {
   const [isMobile, setIsMobile] = useState(false);
