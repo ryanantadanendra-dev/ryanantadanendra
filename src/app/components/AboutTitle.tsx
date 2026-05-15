@@ -16,14 +16,16 @@ export default function AboutTitle() {
         style={{ x: xLeft }}
       >
         About Me - About Me - About Me - About Me - About Me - About Me - About
-        Me - About Me
+        Me - About Me - About Me - About Me - About Me - About Me - About Me -
+        About Me
       </motion.h1>
       <motion.h1
         id="right"
         className="text-6xl whitespace-nowrap"
         style={{ x: xRight }}
       >
-        About Me - About Me - About Me - About Me - About Me - About Me
+        About Me - About Me - About Me - About Me - About Me - About Me - About
+        Me - About Me - About Me - About Me - About Me - About Me
       </motion.h1>
     </div>
   );

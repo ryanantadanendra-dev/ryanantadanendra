@@ -5,16 +5,16 @@ import me from "../../../public/images/ME.jpg";
 
 export function About() {
   return (
-    <div className="w-full h-full py-4 mt-28">
+    <div className="w-full h-full py-4 lg:px-12 mt-28">
       {/* <StickyScroll content={content} /> */}
-      <div className="contents-wrapper flex flex-col justify-center md:flex-row">
+      <div className="contents-wrapper flex flex-col justify-around gap-12 md:flex-row">
         <div className="content flex justify-center md:w-1/2">
           <motion.div
             initial={{ y: 100, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, ease: "easeOut", delay: 0.8 }}
             viewport={{ once: true }}
-            className="image-wrapper w-72 h-72 lg:w-96 lg:h-96 md:w-72 md:h-72"
+            className="image-wrapper w-72 h-72 lg:w-[28rem] lg:h-[28rem] md:w-72 md:h-72"
           >
             <Image
               width={200}
@@ -37,7 +37,7 @@ export function About() {
               <br />
             </article>
           </div>
-          <div className="flex gap-5 mt-32 md:mt-0">
+          <div className="flex gap-5 mt-32 md:mt-0 ">
             <a href="https://www.linkedin.com/in/ryananta-danendra-540a272a5/">
               <div className="social-link flex items-center">
                 <svg

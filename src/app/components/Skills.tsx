@@ -25,7 +25,7 @@ const Skills = () => {
   // const xRight = useTransform(scrollY, [0, 500], [0, -900]);
 
   return (
-    <div className="skills-container mx-auto w-[100vw] h-[160vh] md:h-[100vh] lg:h-[250vh] relative whitespace-nowrap overflow-hidden font-bold">
+    <div className="skills-container mx-auto w-[100vw] h-[160vh] md:h-[100vh] lg:h-full relative whitespace-nowrap overflow-hidden font-bold">
       <motion.h1
         initial={{ x: isMobile ? 20 : -200, opacity: 0 }}
         whileInView={{ x: isMobile ? 0 : 0, opacity: 1 }}

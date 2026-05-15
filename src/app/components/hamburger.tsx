@@ -1,20 +1,28 @@
 "use client";
 
+import { useState } from "react";
+
 export default function Hamburger() {
+  const [isOpen, setIsOpen] = useState(false);
+
   function openMenu() {
     const Menu = document.getElementById("hamburger-menu");
     const Path = document.getElementById("hamburger-path");
 
-    if (Menu?.classList.contains("-top-96")) {
-      Menu.classList.remove("-top-96");
-      Menu.classList.add("top-0");
+    if (!isOpen) {
+      Menu?.classList.remove("-top-[50rem]");
+      Menu?.classList.add("top-0");
+      Menu?.classList.add("opacity-90");
       Path?.removeAttribute("path");
       Path?.setAttribute("fill", "#333333");
-    } else if (Menu?.classList.contains("top-0")) {
+      setIsOpen(true);
+    } else if (isOpen) {
       Menu?.classList.remove("top-0");
-      Menu?.classList.add("-top-96");
+      Menu?.classList.add("-top-[50rem]");
+      Menu?.classList.add("opacity-0");
       Path?.removeAttribute("path");
       Path?.setAttribute("fill", "#FFFFFF");
+      setIsOpen(false);
     }
   }
 
@@ -34,20 +42,20 @@ export default function Hamburger() {
         </svg>
       </button>
       <div
-        className=" -z-10 w-full h-72 -top-96 transition-all duration-300 ease-out fixed pt-20 ps-3"
+        className=" -z-10 flex flex-col justify-center items-center gap-5 w-full h-screen -top-[50rem] transition-all duration-300 ease-in-out opacity-0 fixed pt-20 ps-3"
         id="hamburger-menu"
         style={{ backgroundColor: "#FFFFFF" }}
       >
-        <a href="#home">
+        <a href="#home" onClick={openMenu}>
           <p className="text-black text-2xl">Home</p>
         </a>
-        <a href="#projects">
+        <a href="#projects" onClick={openMenu}>
           <p className="text-black text-2xl mt-1">Projects</p>
         </a>
-        <a href="#about">
+        <a href="#about" onClick={openMenu}>
           <p className="text-black text-2xl mt-1">About</p>
         </a>
-        <a href="#skills">
+        <a href="#skills" onClick={openMenu}>
           <p className="text-black text-2xl mt-1">Skills</p>
         </a>
       </div>
