@@ -1,8 +1,5 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { motion } from "motion/react";
-
 const Footer = () => {
   return (
     <footer className="bg-black/[0.96]">

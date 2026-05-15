@@ -2,10 +2,9 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { motion, useScroll, useTransform } from "motion/react";
+import { motion, useScroll } from "motion/react";
 
 const Skills = () => {
-  const { scrollY } = useScroll();
   const [isMobile, setIsMobile] = useState(false);
   const [isTablet, setIsTablet] = useState(false);
 
@@ -21,8 +20,6 @@ const Skills = () => {
 
     return () => window.removeEventListener("resize", checkWidth);
   }, []);
-
-  // const xRight = useTransform(scrollY, [0, 500], [0, -900]);
 
   return (
     <div className="skills-container mx-auto w-[100vw] h-[160vh] md:h-[100vh] lg:h-full relative whitespace-nowrap overflow-hidden font-bold">
