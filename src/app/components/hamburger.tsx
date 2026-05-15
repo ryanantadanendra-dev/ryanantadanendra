@@ -42,7 +42,7 @@ export default function Hamburger() {
         </svg>
       </button>
       <div
-        className=" -z-10 flex flex-col justify-center items-center gap-5 w-full h-screen -top-[50rem] transition-all duration-300 ease-in-out opacity-0 fixed pt-20 ps-3"
+        className=" -z-10 flex flex-col justify-center items-center gap-5 w-full h-screen -top-[50rem] transition-all duration-300 ease-in-out opacity-0 fixed ps-3"
         id="hamburger-menu"
         style={{ backgroundColor: "#FFFFFF" }}
       >
